@@ -5,7 +5,7 @@ from ai.ai import ai_chat
 
 class CmdPray(Command):
     """
-    Pray to the gods and hope for an answer
+    Pray to the gods and hope for an answer (sometimes this takes a bit)
 
     Usage:
         pray <something>
