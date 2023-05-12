@@ -1,0 +1,193 @@
+# This batch file will create the initial world of Vorvania.
+# Run this batch file using the command:
+# batchcommand world.create_world
+
+# To delete the world, first find identifiers of the first and last room:
+# find vor#01
+# find vor#02
+
+# Use results of find to delete the range:
+# del 89-94
+
+# NOTE: This only deletes the objects created in this script.
+
+# Change the description for Limbo
+@desc Limbo = 
+Welcome to |gVorvania|n, a Multi-User Dungeon (MUD) with content created almost
+exclusively by AI. The Large Language Model (LLM) being used is GPT4-x-Alpaca
+and is hosted using Oobabooga.
+
+The initial starting room is Limbo and below you will find a description of this
+mysterious place. There's a |wportal|n nearby that you can use to exit and begin
+your adventure. The command |wlook portal|n will print a description of the
+portal and |wlook|n can be used to examine other things as well. Type |wportal|n
+to enter the portal and begin your journey.
+
+Once you have entered the world, you will be able to move around using
+directional commands, like |weast|n, |wwest|n, |wnorth|n, or |wsouth|n. The
+world you will explore has not been fully discovered yet. If you journey to an
+area that no adventurer has been to before, the AI will generate a new room for
+you to explore and then it will be available for other people to visit as well.
+
+If ever you find yourself lost and would like to return to the starting point,
+type |wteleport home|n.
+
+And now...
+
+You find yourself in a shadowy plane of existence where the laws of physics and
+morality seemingly dissolve. Here, in this eerie limbo, spirits and entities
+roam freely, existing between the cracks of time. Shadows lengthen without the
+influence of the sun and whispers carry through the void, echoing the hollow
+histories of those who once walked the earth.
+
+# Create one-way entrance from Limbo to Castle
+@dig Castle;vor#01 = portal;out;enter
+
+# Add description to Limbo portal
+@desc portal = 
+You see a swirling vortex of iridescent light, beckoning you to step through its
+threshold. This mesmerizing gateway leads to a realm shrouded in mystery, where
+the familiar gives way to the unexpected. Ancient lands rich with history and
+magic lay dormant, waiting to reveal their treasures to those brave enough to
+venture beyond the veil. Step through the shimmering |wportal|n, and let the
+unknown awaken your senses, stirring a hunger within you that can only be
+satiated by the exploration of the extraordinary.
+
+# Navigate to the Castle via the portal
+portal
+
+# Add a description to the Castle
+@desc
+Nestled at the confluence of four distinct terrains lies a majestic castle. At
+its feet, a verdant forest thrives, rich with foliage and the songs of woodland
+creatures. Beyond the stone walls, the desert's golden horizon calls forth, its
+heat radiating against the cool facade of the castle. Mountain peaks loom in the
+distance, their snowcapped summits a testament to the earth's might. Finally,
+the swamp's murky waters encircle the castle, their dark reflections reflecting
+the mysterious and ancient history tied to the site.
+
+You stand in the castle courtyard. It is a vibrant hub of activity, surrounded
+by towering spires and ornate turrets. The air buzzes with energy as nobles and
+commoners alike gather to do business. The cobblestone ground is littered with
+the clatter of hooves and the jostling of wagons, transporting goods and
+passengers to and from the city. The scent of freshly baked bread and savory
+roasted meats fills the air, intermingled with the pungent odors of livestock
+and musty stables. Colorful banners flap lazily above, flaunting the insignias
+of noble houses and serving as a backdrop to the ebb and flow of courtly
+affairs.
+
+To the |weast|n, you see a lush forest.
+To the |wwest|n, you see a blazing desert.
+To the |wnorth|n, you see snow-capped mountains.
+To the |wsouth|n, you see a decaying swamp.
+
+# Add an exit to the forest
+@tunnel e = "Forest Entrance"
+
+# Describe exit to forest from the castle
+@desc east = 
+To the |weast|n, you see a verdant forest, rich with foliage and the songs of
+woodland creatures.
+
+# Move to the forest
+east
+
+# Describe the forest entrance
+@desc
+A verdant sea of trees extends as far as the eye can see, their branches
+intertwining overhead. The sun casts dappled light through the leaves, creating
+a serene atmosphere. To the west, a magnificent castle stands proudly amidst the
+woods. Its whitewashed walls shimmer with age-old magic, beckoning travelers and
+visitors alike. The sweet scent of blooming flowers fills the air, carried by
+gentle winds that whisper through the treetops.
+
+# Describe the castle entrance
+@desc west = To the west, you can see the entrance to the castle courtyard.
+
+# Move back to the castle
+@teleport Castle
+
+# Add an exit to the desert
+@tunnel w = "Desert Entrance"
+
+# Describe exit to desert from the castle
+@desc west = 
+To the |wwest|n, the desert's golden horizon calls forth, its heat radiating
+against the cool facade of the castle.
+
+# Move to the desert
+west
+
+# Describe the desert entrance
+@desc
+An endless expanse of sand dunes unfolds before you, their hues ranging from
+pale gold to deep red. The warmth of the sun kisses skin, as the cool breeze
+whispers past. To the east, a majestic castle stands tall, its walls adorned
+with intricate patterns inspired by the desert's natural beauty.
+
+# Describe the castle entrance
+@desc east = To the east, you can see the entrance to the castle courtyard.
+
+# Move back to the castle
+@teleport Castle
+
+# Add an exit to the mountain
+@tunnel n = "Mountain Entrance"
+
+# Describe exit to mountain from the castle
+@desc north = 
+To the |wnorth|n, mountain peaks loom in the distance, their snowcapped summits
+a testament to the earth's might.
+
+# Move to the mountain
+north
+
+# Describe the mountain entrance
+@desc
+Imposing peaks reach up towards the heavens, their snow-capped surfaces
+glistening in the sunlight. The crisp air bites at exposed flesh, causing one to
+feel alive. To the south, a grandiose castle stands guard, its silhouette
+mirroring the surrounding mountainscape.
+
+# Describe the castle entrance
+@desc east = To the south, you can see the entrance to the castle courtyard.
+
+# Move back to the castle
+@teleport Castle
+
+# Add an exit to the swamp
+@tunnel s = "Swamp Entrance"
+
+# Describe exit to swamp from the castle
+@desc south = 
+To the |wsouth|n, the swamp's murky waters encircle the castle, their dark
+reflections reflecting the mysterious and ancient history tied to the site.
+
+# Move to the swamp
+south
+
+# Describe the swamp entrance
+@desc
+The putrid stench of rotting vegetation assaults your nostrils as you navigate
+the murky waters of the swamp. The thick, viscous mud clings to your feet with
+each step. To the north, a castle stands imposingly, fighting back the
+encroaching wilderness.
+
+# Describe the castle entrance
+@desc north = To the north, you can see the entrance to the castle courtyard.
+
+# Move back to the castle
+@teleport Castle
+
+# Create final room to make it easier to delete everything
+@dig Void;vor#02
+
+# Move to the void
+@teleport Void
+
+# Describe the void
+@desc
+There is nothing here in the void. It is empty and you feel distinctly alone.
+
+# Move back to Limbo
+@teleport Limbo
