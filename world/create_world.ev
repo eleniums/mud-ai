@@ -104,6 +104,15 @@ gentle winds that whisper through the treetops.
 # Describe the castle entrance
 @desc west = To the west, you can see the entrance to the castle courtyard.
 
+# Add east exit
+tunnel e = Forest
+
+# Add north exit
+tunnel n = Forest
+
+# Add south exit
+tunnel s = Forest
+
 # Move back to the castle
 @teleport Castle
 
@@ -127,6 +136,15 @@ with intricate patterns inspired by the desert's natural beauty.
 
 # Describe the castle entrance
 @desc east = To the east, you can see the entrance to the castle courtyard.
+
+# Add west exit
+tunnel w = Desert
+
+# Add north exit
+tunnel n = Desert
+
+# Add south exit
+tunnel s = Desert
 
 # Move back to the castle
 @teleport Castle
@@ -152,6 +170,15 @@ mirroring the surrounding mountainscape.
 # Describe the castle entrance
 @desc east = To the south, you can see the entrance to the castle courtyard.
 
+# Add west exit
+tunnel w = Mountain
+
+# Add east exit
+tunnel e = Mountain
+
+# Add north exit
+tunnel n = Mountain
+
 # Move back to the castle
 @teleport Castle
 
@@ -175,6 +202,15 @@ encroaching wilderness.
 
 # Describe the castle entrance
 @desc north = To the north, you can see the entrance to the castle courtyard.
+
+# Add west exit
+tunnel w = Swamp
+
+# Add east exit
+tunnel e = Swamp
+
+# Add south exit
+tunnel s = Swamp
 
 # Move back to the castle
 @teleport Castle
