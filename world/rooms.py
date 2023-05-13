@@ -33,7 +33,7 @@ class AIRoom(DefaultRoom):
         else:
             self.db.desc = resp
 
-        # TODO: this creates duplicate exits if an exit already exists. How to tell if an exit already exists? Maintain a grid maybe??
+        # TODO: this creates exits without duplicates, but doesn't maintain a grid of previously visited locations, so you can move around in a circle and end up with a different location. It always creates a new location.
         # create additional exits
         new_room = ForestRoom
         if self.room_name == "Desert":
@@ -43,29 +43,33 @@ class AIRoom(DefaultRoom):
         elif self.room_name == "Swamp":
             new_room = SwampRoom
 
-        exite = create_object(new_room, key=self.room_name)
-        create_object(DefaultExit, key="east",
-                      location=self, destination=exite)
-        create_object(DefaultExit, key="west",
-                      location=exite, destination=self)
+        if not any(exit.key == 'east' for exit in self.exits):
+            exite = create_object(new_room, key=self.room_name)
+            create_object(DefaultExit, key="east",
+                          location=self, destination=exite)
+            create_object(DefaultExit, key="west",
+                          location=exite, destination=self)
 
-        exitw = create_object(new_room, key=self.room_name)
-        create_object(DefaultExit, key="west",
-                      location=self, destination=exitw)
-        create_object(DefaultExit, key="east",
-                      location=exitw, destination=self)
+        if not any(exit.key == 'west' for exit in self.exits):
+            exitw = create_object(new_room, key=self.room_name)
+            create_object(DefaultExit, key="west",
+                          location=self, destination=exitw)
+            create_object(DefaultExit, key="east",
+                          location=exitw, destination=self)
 
-        exits = create_object(new_room, key=self.room_name)
-        create_object(DefaultExit, key="south",
-                      location=self, destination=exits)
-        create_object(DefaultExit, key="north",
-                      location=exits, destination=self)
+        if not any(exit.key == 'south' for exit in self.exits):
+            exits = create_object(new_room, key=self.room_name)
+            create_object(DefaultExit, key="south",
+                          location=self, destination=exits)
+            create_object(DefaultExit, key="north",
+                          location=exits, destination=self)
 
-        exitn = create_object(new_room, key=self.room_name)
-        create_object(DefaultExit, key="north",
-                      location=self, destination=exitn)
-        create_object(DefaultExit, key="south",
-                      location=exitn, destination=self)
+        if not any(exit.key == 'north' for exit in self.exits):
+            exitn = create_object(new_room, key=self.room_name)
+            create_object(DefaultExit, key="north",
+                          location=self, destination=exitn)
+            create_object(DefaultExit, key="south",
+                          location=exitn, destination=self)
 
 
 class ForestRoom(AIRoom):
