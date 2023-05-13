@@ -1,4 +1,5 @@
 import requests
+from random import random
 
 
 def ai_chat(prompt):
@@ -8,7 +9,9 @@ def ai_chat(prompt):
         uri = f'http://{host}:{port}/api/v1/generate'
 
         context = "Below is an instruction that describes a task. Write a response that appropriately completes the request and, after response, please stop generation."
-        p = f"{context}\n### Human:\n{prompt}\n### Assistant:\n"
+
+        # random() is added to provide some randomness, since the api is stateless
+        p = f"{context}\n### Human:\n{random()} {prompt}\n### Assistant:\n"
 
         request = {
             'prompt': p,

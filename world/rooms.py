@@ -1,7 +1,6 @@
 
 from evennia import DefaultRoom, utils
 from ai.ai import ai_chat
-from random import random, seed
 
 
 class AIRoom(DefaultRoom):
@@ -42,7 +41,7 @@ class ForestRoom(AIRoom):
     """
 
     default_desc = "You are in the midst of a lush and verdant forest."
-    prompt = f"{random()} Provide a description of a deep forest area. It might have mushrooms or butterflies or animals grazing peacefully or something else not described."
+    prompt = f"Provide a description of a deep forest area. It might have mushrooms or butterflies or animals grazing peacefully or something else not described."
 
 
 class DesertRoom(AIRoom):
@@ -52,7 +51,7 @@ class DesertRoom(AIRoom):
     """
 
     default_desc = "You are surrounded by an expansive desert."
-    prompt = f"{random()} Provide a description of a sweltering desert area. It might have cacti or rocks or lizards scrambling around or something else not described."
+    prompt = f"Provide a description of a sweltering desert area. It might have cacti or rocks or lizards scrambling around or something else not described."
 
 
 class MountainRoom(AIRoom):
@@ -62,7 +61,7 @@ class MountainRoom(AIRoom):
     """
 
     default_desc = "You are on a chilly snow-covered mountain."
-    prompt = f"{random()} Provide a description of a snowy mountainside area. It might have snow bluffs or trees covered in snow or something else not described."
+    prompt = f"Provide a description of a snowy mountainside area. It might have snow bluffs or trees covered in snow or something else not described."
 
 
 class SwampRoom(AIRoom):
@@ -72,4 +71,4 @@ class SwampRoom(AIRoom):
     """
 
     default_desc = "You are in an old swamp."
-    prompt = f"{random()} Provide a description of a decaying swamp area. It might have dying trees or frogs or smell terrible or something else not described."
+    prompt = f"Provide a description of a decaying swamp area. It might have dying trees or frogs or smell terrible or something else not described."
