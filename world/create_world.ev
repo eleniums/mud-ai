@@ -30,7 +30,7 @@ area that no adventurer has been to before, the AI will generate a new room for
 you to explore and then it will be available for other people to visit as well.
 
 If ever you find yourself lost and would like to return to the starting point,
-type |wteleport home|n.
+type |wteleport castle|n.
 
 And now...
 
