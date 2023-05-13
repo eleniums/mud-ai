@@ -105,13 +105,13 @@ gentle winds that whisper through the treetops.
 @desc west = To the west, you can see the entrance to the castle courtyard.
 
 # Add east exit
-tunnel e = Forest
+tunnel e = Forest : world.rooms.ForestRoom
 
 # Add north exit
-tunnel n = Forest
+tunnel n = Forest : world.rooms.ForestRoom
 
 # Add south exit
-tunnel s = Forest
+tunnel s = Forest : world.rooms.ForestRoom
 
 # Move back to the castle
 @teleport Castle
@@ -138,13 +138,13 @@ with intricate patterns inspired by the desert's natural beauty.
 @desc east = To the east, you can see the entrance to the castle courtyard.
 
 # Add west exit
-tunnel w = Desert
+tunnel w = Desert : world.rooms.DesertRoom
 
 # Add north exit
-tunnel n = Desert
+tunnel n = Desert : world.rooms.DesertRoom
 
 # Add south exit
-tunnel s = Desert
+tunnel s = Desert : world.rooms.DesertRoom
 
 # Move back to the castle
 @teleport Castle
@@ -171,13 +171,13 @@ mirroring the surrounding mountainscape.
 @desc east = To the south, you can see the entrance to the castle courtyard.
 
 # Add west exit
-tunnel w = Mountain
+tunnel w = Mountain : world.rooms.MountainRoom
 
 # Add east exit
-tunnel e = Mountain
+tunnel e = Mountain : world.rooms.MountainRoom
 
 # Add north exit
-tunnel n = Mountain
+tunnel n = Mountain : world.rooms.MountainRoom
 
 # Move back to the castle
 @teleport Castle
@@ -204,13 +204,13 @@ encroaching wilderness.
 @desc north = To the north, you can see the entrance to the castle courtyard.
 
 # Add west exit
-tunnel w = Swamp
+tunnel w = Swamp : world.rooms.SwampRoom
 
 # Add east exit
-tunnel e = Swamp
+tunnel e = Swamp : world.rooms.SwampRoom
 
 # Add south exit
-tunnel s = Swamp
+tunnel s = Swamp : world.rooms.SwampRoom
 
 # Move back to the castle
 @teleport Castle
