@@ -38,3 +38,34 @@ Evennia's documentation is here:
 https://github.com/evennia/evennia/wiki.
 
 Enjoy!
+
+# Notes for mud-ai
+
+Run the MUD server:
+```
+evennia start
+```
+
+Attach to server for logs:
+```
+evennia -l
+```
+
+Stop the server:
+```
+evennia stop
+```
+
+NOTE: An Oobabooga server with the REST API enabled will need to be running for
+all commands to work properly. Set the REST API endpoint here in `ai/ai.py`:
+```py
+host = "ec2-35-90-219-160.us-west-2.compute.amazonaws.com"
+```
+
+Files I changed:
+
+- Changed `SERVERNAME` in `server/conf/settings.py`
+- Added `ai` package to prompt a chat ai for a response
+- Added `commands/pray.py` to integrate with the `ai` package
+- Added `world/rooms.py` containing some custom rooms
+- Added `create_world.ev` batchcommand file to create the world
